@@ -1,5 +1,5 @@
 # Test Enviorment for ARM APB with a ALU(Arhitmetic Logic Unit)
-
+![Block diagram](./img/system_design.jpg"Block diagram of the system")
 
 ## System Interface   
 | Name     | Direction | Size     | Description |
@@ -14,8 +14,8 @@
 | psel      | I         | 1        | Select     |
 | penable   | I         | 1        | Enable     |
 | paddr     | I         | 16        | Addres     |
-| pwrite    | I         | 1        | Select     |
-| pwdata    | I         | 32        | Enable     |
-| pready    | O         | 1        | Addres     |
-| prdata    | O         | 32       | Select     |
-| pslverr   | O         | 1        | Enable     |
+| pwrite    | I         | 1        | Direction     |
+| pwdata    | I         | 32        | Write Data     |
+| pready    | O         | 1        | Ready     |
+| prdata    | O         | 32       | Read data     |
+| pslverr   | O         | 1        | Transfer error     |
