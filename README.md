@@ -1,11 +1,14 @@
 # Test Enviorment for ARM APB with a ALU(Arhitmetic Logic Unit)
+This module implements an arithmetic unit configurable and controllable through APB interface. Supports only Addition and Multiplication operations.
+Please see below the block diagram and interfaces:
+
 ![Block diagram](./img/system_design.jpg "Block diagram of the system")
 *Block diagram of the system*
 # Features
 - Single clock domain (1Ghz)
 - Support asynchronous reset active low
 ![instruct_list](./img/instruct_format.jpg "instruct_format")
-*Instruction format
+*Instruction format*
 
 - Imm – Immediate value
 - DST – Destination register address
