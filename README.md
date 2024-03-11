@@ -80,8 +80,8 @@ If the arithmetic operation result exceeds 32 bits, the result written in the de
 ## HW-SW Handshake
 The HW-SW handshake will be done according to the control and status registers and the interrupt:
 - **afvip_intr** – is a level output signal and can be triggered for 2 reasons:
-- The module finished the instruction execution
-- The module is wrong configured (unsupported opcode)
+1. The module finished the instruction execution
+2. The module is wrong configured (unsupported opcode)
 - **ev_ctrl_start** – Is an event type register and is controlled through APB. When this register is written through APB with 1, the module will start processing the configured instruction.
 - **sts_intr_error** – Is a status register that can be read-only through APB. It indicates when the interrupt is raised because of an illegal configuration.
 - **sts_intr_finish** – Is a status register that can be read-only through APB. It indicates when the interrupt is raised because the instruction execution is finished.
