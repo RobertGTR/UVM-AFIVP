@@ -12,17 +12,17 @@ Please see below the block diagram and interfaces:
 ![instruct_list](./img/instruct_format.jpg "instruct_format")
 *Instruction format*
 
-- Imm – Immediate value
-- DST – Destination register address
-- RS0 – Source register 0
-- RS1 – Source register 1
-- Opcode – Operation code
-- The module supports the next operations according to the operation c ode:
-- Opcode == 3’d0: reg[dst] = reg[rs0] + imm
-- Opcode == 3’d1: reg[dst] = reg[rs0] * imm
-- Opcode == 3’d2: reg[dst] = reg[rs0] + reg[rs1]
-- Opcode == 3’d3: reg[dst] = reg[rs0] * reg[rs1]
-- Opcode == 3’d4: reg[dst] = reg[rs0] * reg[rs1] + imm
+- **Imm** – Immediate value
+- **DST** – Destination register address
+- **RS0** – Source register 0
+- **RS1** – Source register 1
+- **Opcode** – Operation code
+  The module supports the next operations according to the operation code:
+- **Opcode** == 3’d0: reg[dst] = reg[rs0] + imm
+- **Opcode** == 3’d1: reg[dst] = reg[rs0] * imm
+- **Opcode** == 3’d2: reg[dst] = reg[rs0] + reg[rs1]
+- **Opcode** == 3’d3: reg[dst] = reg[rs0] * reg[rs1]
+- **Opcode** == 3’d4: reg[dst] = reg[rs0] * reg[rs1] + imm
 
 If the arithmetic operation result exceeds 32 bits, the result written in the destination register will be overlapped: for example 
 - 0xFFFFFFFE + 0x2 = 0x1
@@ -77,12 +77,13 @@ If the arithmetic operation result exceeds 32 bits, the result written in the de
 - **ev_intr_clr_err** – It is an event type register, and its job is to clear the error interrupt.
 - **ev_intr_clr_finish** – It is an event type register, and its job is to clear the finish interrupt.
 The HW-SW handshake for 1 instruction execution is done in 5 steps:
+
  **Step 1** - Configure Registers through APB (Instruction, set values)
  **Step 2** - Set start register through APB
  **Step 3** - Wait for interrupt
  **Step 4** - Read interrupt status
  **Step 5** - Clear interrupt 
- The Interrupt must be raised in maximum 10 cycles from APB transfer completion of event_control_start register write-access with “1” value. (Minimum 1 cycle).
+The Interrupt must be raised in maximum 10 cycles from APB transfer completion of event_control_start register write-access with “1” value. (Minimum 1 cycle).
 
 
 ## Limitation
