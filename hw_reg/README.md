@@ -1,4 +1,8 @@
-This is a preview for hw_registers.xls in markdown.
+This is a preview for hw_registers.xlsx in markdown.
+
+| Project Name    | afvip |
+| APB Addres Width| 16    |
+| Base addres     | 0x8000|
 
 | Address Offset | Register Name | Register Type | Field Width | Field Reset Value | Description                                |
 | -------------- | ------------- | ------------- | ----------- | ----------------- | ------------------------------------------ |
