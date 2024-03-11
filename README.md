@@ -1,9 +1,9 @@
 # Test Enviorment for ARM APB with a ALU(Arhitmetic Logic Unit)
 
 
-## Ports
+## System Interface   
 | Name     | Direction | Size     | Description |
 | -------- | --------  | -------- | ----------- |
-| System Interface                              |
-| Cell 1   | Cell 2    | Cell 3   | Cell 3      |
-| Cell 4   | Cell 5    | Cell 6   | Cell 3      |
+| Clk      | I         | 1| Clock     |
+| rst_n    | I         | 1            | Asynchronous Reset active low      |
+| afvip_intr  | O      | 1            | Interrupt   |
