@@ -1,8 +1,10 @@
 # Test Enviorment for ARM APB with a ALU(Arhitmetic Logic Unit)
-This module implements an arithmetic unit configurable and controllable through APB interface. Supports only Addition and Multiplication operations.
+This module implements an arithmetic unit configurable and controllable through APB interface. 
+Supports only Addition and Multiplication operations.
 Please see below the block diagram and interfaces:
 
 ![Block diagram](./img/system_design.jpg "Block diagram of the system")
+
 *Block diagram of the system*
 # Features
 - Single clock domain (1Ghz)
