@@ -1,9 +1,24 @@
 # Test Enviorment for ARM APB with a ALU(Arhitmetic Logic Unit)
 ![Block diagram](./img/system_design.jpg "Block diagram of the system")
 *Block diagram of the system*
-
+# Features
+- Single clock domain (1Ghz)
+- Support asynchronous reset active low
 ![instruct_list](./img/instruct_format.jpg "instruct_format")
 *Instruction format
+
+- Imm – Immediate value
+- DST – Destination register address
+- RS0 – Source register 0
+- RS1 – Source register 1
+- Opcode – Operation code
+- The module supports the next operations according to the operation c ode:
+- Opcode == 3’d0: reg[dst] = reg[rs0] + imm
+- Opcode == 3’d1: reg[dst] = reg[rs0] * imm
+- Opcode == 3’d2: reg[dst] = reg[rs0] + reg[rs1]
+- Opcode == 3’d3: reg[dst] = reg[rs0] * reg[rs1]
+- Opcode == 3’d4: reg[dst] = reg[rs0] * reg[rs1] + imm
+ 
 ## System Interface   
 | Name     | Direction | Size     | Description |
 | -------- | :--------: | -------- | ----------- |
