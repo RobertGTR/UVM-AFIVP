@@ -1,5 +1,5 @@
 # Test Enviorment for ARM APB with a ALU(Arhitmetic Logic Unit)
-![Block diagram](./img/system_design.jpg"Block diagram of the system")
+![Block diagram](./img/system_design.jpg "Block diagram of the system")
 
 ## System Interface   
 | Name     | Direction | Size     | Description |
