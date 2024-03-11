@@ -9,6 +9,15 @@ Please see below the block diagram and interfaces:
 # Features
 - Single clock domain (1Ghz)
 - Support asynchronous reset active low
+| APB Address  | Type | Name                     | APB Access            | Internal Access |
+| ------------ | ---- | ------------------------ | --------------------- | --------------- |
+| 0x0000–007C  | RWS  | Working Registers        | Read/Write access     | Read/Write      |
+| 0x0080       | RW   | Configuration instruction| Read/Write access     | Read            |
+| 0x0084       | RO   | Interrupt status         | Read Only             | Read/Write      |
+| 0x0088       | RWA  | Interrupt Clear          | Read/Write Auto reset | Read            |
+| 0x008C       | RWA  | Control Register         | Read/Write Auto reset | Read            |
+Fore more information you can find it in [here](./hw_reg/hw_registers.xlsx)
+
 ![instruct_list](./img/instruct_format.jpg "instruct_format")
 *Instruction format*
 
@@ -67,7 +76,7 @@ If the arithmetic operation result exceeds 32 bits, the result written in the de
 | 0x007C      | 0x1F                | reg[31]|
 
 ## HW-SW Handshake
-- The HW-SW handshake will be done according to the control and status registers and the interrupt:
+The HW-SW handshake will be done according to the control and status registers and the interrupt:
 - **afvip_intr** – is a level output signal and can be triggered for 2 reasons:
 - The module finished the instruction execution
 - The module is wrong configured (unsupported opcode)
