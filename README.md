@@ -24,7 +24,7 @@ Please see below the block diagram and interfaces:
 - Opcode == 3’d3: reg[dst] = reg[rs0] * reg[rs1]
 - Opcode == 3’d4: reg[dst] = reg[rs0] * reg[rs1] + imm
 
-- If the arithmetic operation result exceeds 32 bits, the result written in the destination register will be overlapped: for example 
+If the arithmetic operation result exceeds 32 bits, the result written in the destination register will be overlapped: for example 
 - 0xFFFFFFFE + 0x2 = 0x1
 - 0xFFFFFFFF * 0x2 = 0xFFFF FFFE
 
