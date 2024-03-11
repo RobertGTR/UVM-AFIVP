@@ -66,6 +66,24 @@ If the arithmetic operation result exceeds 32 bits, the result written in the de
 | 0x0078      | 0x1E                | reg[30]|
 | 0x007C      | 0x1F                | reg[31]|
 
+## HW-SW Handshake
+- The HW-SW handshake will be done according to the control and status registers and the interrupt:
+- **afvip_intr** – is a level output signal and can be triggered for 2 reasons:
+- The module finished the instruction execution
+- The module is wrong configured (unsupported opcode)
+- **ev_ctrl_start** – Is an event type register and is controlled through APB. When this register is written through APB with 1, the module will start processing the configured instruction.
+- **sts_intr_error** – Is a status register that can be read-only through APB. It indicates when the interrupt is raised because of an illegal configuration.
+- **sts_intr_finish** – Is a status register that can be read-only through APB. It indicates when the interrupt is raised because the instruction execution is finished.
+- **ev_intr_clr_err** – It is an event type register, and its job is to clear the error interrupt.
+- **ev_intr_clr_finish** – It is an event type register, and its job is to clear the finish interrupt.
+The HW-SW handshake for 1 instruction execution is done in 5 steps:
+ **Step 1** - Configure Registers through APB (Instruction, set values)
+ **Step 2** - Set start register through APB
+ **Step 3** - Wait for interrupt
+ **Step 4** - Read interrupt status
+ **Step 5** - Clear interrupt 
+ The Interrupt must be raised in maximum 10 cycles from APB transfer completion of event_control_start register write-access with “1” value. (Minimum 1 cycle).
+
 
 ## Limitation
 The configuration must be stable during the instruction execution, From start event until to the interrupt indication.
