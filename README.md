@@ -23,7 +23,14 @@ Please see below the block diagram and interfaces:
 - Opcode == 3’d2: reg[dst] = reg[rs0] + reg[rs1]
 - Opcode == 3’d3: reg[dst] = reg[rs0] * reg[rs1]
 - Opcode == 3’d4: reg[dst] = reg[rs0] * reg[rs1] + imm
- 
+
+## Limitation
+The configuration must be stable during the instruction execution, From start event until to the interrupt indication.
+ The APB will return slave error in the next cases:
+- Decoded address is unknown (Out of the address map).
+- A write access was performed to a read-only register address.
+- Address is misaligned at 4 bytes boundary.
+
 ## System Interface   
 | Name     | Direction | Size     | Description |
 | -------- | :--------: | -------- | ----------- |
