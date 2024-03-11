@@ -1,3 +1,5 @@
+This is a preview for hw_registers.xls in markdown.
+
 | Address Offset | Register Name | Register Type | Field Width | Field Reset Value | Description                                |
 | -------------- | ------------- | ------------- | ----------- | ----------------- | ------------------------------------------ |
 | 0x0000         | cfg_reg00     | RW            | 32          | 0x0               | Configuration Register 0, Read/Write access|
