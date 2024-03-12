@@ -87,6 +87,7 @@ The HW-SW handshake will be done according to the control and status registers a
 - **sts_intr_finish** – Is a status register that can be read-only through APB. It indicates when the interrupt is raised because the instruction execution is finished.
 - **ev_intr_clr_err** – It is an event type register, and its job is to clear the error interrupt.
 - **ev_intr_clr_finish** – It is an event type register, and its job is to clear the finish interrupt.
+
 The HW-SW handshake for 1 instruction execution is done in 5 steps:
 
  **Step 1** - Configure Registers through APB (Instruction, set values).
@@ -94,6 +95,7 @@ The HW-SW handshake for 1 instruction execution is done in 5 steps:
  **Step 3** - Wait for interrupt.
  **Step 4** - Read interrupt status.
  **Step 5** - Clear interrupt.
+
 The Interrupt must be raised in maximum 10 cycles from APB transfer completion of event_control_start register write-access with “1” value. (Minimum 1 cycle).
 
 
