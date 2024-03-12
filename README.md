@@ -18,7 +18,7 @@ Please see below the block diagram and interfaces:
 | 0x0088       | RWA  | Interrupt Clear          | Read/Write Auto reset | Read            |
 | 0x008C       | RWA  | Control Register         | Read/Write Auto reset | Read            |
 
-Fore more information you can find it in [here](./hw_reg/hw_registers.xlsx)
+Fore more information you can find it in [here](./hw_reg)
 
 ![instruct_list](./img/instruct_format.jpg "instruct_format")
 *Instruction format*
